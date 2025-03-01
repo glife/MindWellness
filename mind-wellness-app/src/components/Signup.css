@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+
+/* Full-page coverage with an elegant gradient */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /*background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);*/
+    background: url('/signu_bg3.jpg') center/cover no-repeat;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure full width & height for root */
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Signup container with central alignment */
+.signup-container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Glassmorphism form card */
+.step {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Form Title */
+h2 {
+    color: #e4f7ff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Input Fields */
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 2px solid rgba(117, 165, 255, 0.5);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+input:focus, select:focus {
+    border-color: #ff758c;
+    box-shadow: 0 0 10px rgba(255, 117, 140, 0.4);
+}
+
+/* Stylish Button */
+button {
+    background: linear-gradient(90deg, #75bcff, #26406e);
+    color: white;
+    border: none;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(82, 177, 255, 0.4);
+}
+
+/* Button Hover & Click Effects */
+button:hover {
+    background: linear-gradient(90deg,#26406e, #75bcff);
+    /*background: linear-gradient(90deg, #ff5277, #ff758c);*/
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Disabled Button */
+button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+}
+
+/* Toggle Link */
+.toggle-text {
+    margin-top: 15px;
+    color: #157cfa;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.toggle-text:hover {
+    color: #0e6fe6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 500px) {
+    .step {
+        width: 95%;
+    }
+}
