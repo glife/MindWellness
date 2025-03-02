@@ -4,6 +4,8 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import "./Dashboard.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Community() {
   const [nickname, setNickname] = useState(localStorage.getItem("nickname") || "");
@@ -33,16 +35,25 @@ export default function Community() {
     }
   };
 
+  function NavItem({ icon, label, to }) {
+    return (
+      <Link to={to} className="flex items-center gap-3 p-3 text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg">
+        {icon}
+        <span className="hidden md:block">{label}</span>
+      </Link>
+    );
+  }
+  
   return (
     <div id="dashboard">
       <div className="flex h-screen bg-gradient-to-br from-blue-500 to-green-300 text-white">
         {/* Sidebar */}
         <aside className="w-20 md:w-64 bg-gray-800 p-4 flex flex-col gap-6">
           <nav className="flex flex-col gap-4">
-            <NavItem icon={<Home />} label="Dashboard" />
+            <NavItem icon={<Home />} label="Dashboard" to="/" />
             <NavItem icon={<Book />} label="AI Chat" />
             <NavItem icon={<Heart />} label="Self-Care" />
-            <NavItem icon={<MessageCircle />} label="Community" />
+            <NavItem icon={<MessageCircle />} label="Community" to="/community" />
             <NavItem icon={<AlertTriangle />} label="Crisis Support" />
           </nav>
         </aside>
