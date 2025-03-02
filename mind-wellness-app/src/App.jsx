@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React, { Component } from "react";
-import Signup from "./components/Signup"; // If inside src/components/
+import React from "react";
+import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
+import Community from "./components/Community"; // Import Community Page
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/community" element={<Community />} /> {/* Added Community Page */}
       </Routes>
     </Router>
   );
