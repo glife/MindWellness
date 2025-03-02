@@ -28,7 +28,7 @@ public class JwtFilter extends OncePerRequestFilter {
     private  String userName = null; // To store the username extracted from the JWT.
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException { //This method is overridden from OncePerRequestFilter, ensuring that the filter is applied only once per request.
-        if (httpServletRequest.getRequestURI().matches("/user/login|/user/signup")) { // Match the exact URL pattern
+        if (httpServletRequest.getRequestURI().matches("/user/login|/user/signup|/user/details|/chat/set-nickname|/chat/send|/chat/messages")) { // Match the exact URL pattern
             filterChain.doFilter(httpServletRequest, httpServletResponse);
             return; // Make sure to return here to prevent further filtering on public endpoints
         }else{
@@ -49,7 +49,7 @@ public class JwtFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
                 }
             }
-            if (httpServletRequest.getRequestURI().matches("/user/login|/user/signup")) {
+            if (httpServletRequest.getRequestURI().matches("/user/login|/user/signup|/user/details|/chat/set-nickname|/chat/send|/chat/messages")) {
                 logger.info("Public endpoint hit: " + httpServletRequest.getRequestURI());
                 filterChain.doFilter(httpServletRequest, httpServletResponse);
                 return; // Prevent further filtering

@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.security.AuthProvider;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -94,13 +95,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<Map<String, String>> getUserD(String token) {
         try {
-            // Extract email from the JWT token
-            String email = jwtUtil.extractUsername(token); // Assuming jwtUtil is available and extracts the username
-            // Find the user by email using the named query
+            // Extract email from the token (using JWT utils or whatever method you're using)
+            String email = jwtUtil.extractUsername(token); // Extract email from JWT token
+
+            // Find user by email and role CLIENT
             User user = userDao.findByEmail(email);
-            // Check if the user exists
+
+            // If user exists and has an associated client
             if (user != null) {
-                // Prepare the user details map
                 Map<String, String> userDetails = new HashMap<>();
                 userDetails.put("userID", user.getUserID().toString());
                 userDetails.put("name", user.getName());
@@ -108,19 +110,36 @@ public class UserServiceImpl implements UserService {
                 userDetails.put("contactNo", user.getContactNo());
                 userDetails.put("age", user.getAge().toString());
                 userDetails.put("gender", user.getGender());
+
                 // Return the user details wrapped in ResponseEntity
                 return new ResponseEntity<>(userDetails, HttpStatus.OK);
             } else {
-                // Return 404 if the user is not found
+                // Return 404 if client is not found
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
         } catch (Exception ex) {
-            // Use log.error() to log the exception stack trace and message
-            log.error("Error occurred while fetching user details for token: {}", token, ex);
-
-            // Return 500 if an exception occurs
+            ex.printStackTrace();
+            // Handle any unexpected errors and return a 500 Internal Server Error
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
+
+
 }
+
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+        import React, { Component } from "react";
+        import Signup from "./components/Signup"; // If inside src/components/
+        import Dashboard from "./components/Dashboard";
+
+
+function App() {
+    return (
+            <
+  );
+}
+
+export default App;
+

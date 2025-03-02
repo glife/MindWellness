@@ -15,7 +15,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
 @Configuration  //Indicates that this class provides Spring configuration.
 @EnableWebSecurity  // Enables Spring Security’s web security support.
 public class SecurityConfig {
@@ -31,6 +30,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowCredentials(true);
         configuration.addAllowedOrigin("http://localhost:5173");// Replace '*' with specific origin for security
+//        configuration.addAllowedOrigin("*");
         configuration.addAllowedHeader("*"); // You may specify individual headers like "Content-Type"
         configuration.addAllowedMethod("*"); // Allowed HTTP methods like GET, POST, etc.
         configuration.addExposedHeader("Authorization"); // Include this if you need to expose any headers
@@ -58,7 +58,7 @@ public class SecurityConfig {
         http.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/user/login", "/user/signup", "/user/search","/user/update-profile","/user/filterLawyersBySpecialization","/user/raise-case").permitAll() //Permits public access
+                        .requestMatchers("/user/login", "/user/signup","/user/details","/chat/set-nickname","/chat/send","/chat/messages").permitAll() //Permits public access
                         .anyRequest().authenticated() //Requires authentication for all other requests.
                 )
                 .sessionManagement(session -> session
