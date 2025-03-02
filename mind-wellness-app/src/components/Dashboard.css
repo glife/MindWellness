@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+
+/* dashboard.css */
+#dashboard {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('/signup_bg2.jpg') center/cover no-repeat;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Width and Background of the Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+    background: #1e1e1e;  /* Dark background */
+    border-radius: 10px;
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+    background: #081830;  /* Gradient or solid color */
+    border-radius: 10px;
+}
+
+/* Scrollbar Thumb on Hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6f6f70;  /* Changes color on hover */
+}

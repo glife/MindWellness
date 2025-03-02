@@ -56,6 +56,7 @@ const Signup = () => {
   };
 
   return (
+    <div id="signup">
     <div className="flex justify-center items-center min-h-screen bg-cover bg-center bg-no-repeat px-6">
       <div className="w-full max-w-lg shadow-lg rounded-3xl p-8 space-y-6 transform hover:scale-105 transition-transform duration-300 bg-black backdrop-blur-lg">
         <h1 className="text-3xl font-bold text-center text-white">
@@ -95,6 +96,7 @@ const Signup = () => {
           {isLogin ? "New here? Sign up!" : "Already a user? Log in!"}
         </p>
       </div>
+    </div>
     </div>
   );
 };

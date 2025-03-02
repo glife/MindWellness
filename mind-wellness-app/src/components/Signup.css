@@ -2,18 +2,33 @@
 
 
 /* Full-page coverage with an elegant gradient */
-html, body {
+/* html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     width: 100%;
     /*background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);*/
-    background: url('/signu_bg3.jpg') center/cover no-repeat;
+    /*background: url('/signu_bg3.jpg') center/cover no-repeat;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+
+/* signup.css */
+#signup {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('/signup_bg3.jpg') center/cover no-repeat;
     font-family: "Poppins", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 /* Ensure full width & height for root */
 #root {
