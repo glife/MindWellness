@@ -2,12 +2,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import React, { useState, useEffect } from "react";
 import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
-<<<<<<< HEAD
-import Community from "./components/Community"; // Import Community Page
-=======
 import Community from "./components/Community";
 import { AuthProvider } from "./components/AuthContext";
->>>>>>> 43b2324846f46b3c7c8ae17c51b268735416ce17
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("authToken"));
