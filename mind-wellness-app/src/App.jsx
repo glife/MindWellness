@@ -3,6 +3,7 @@ import React from "react";
 import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
 import Community from "./components/Community"; // Import Community Page
+import Aichat from "./components/Aichat";
 
 function App() {
   return (
