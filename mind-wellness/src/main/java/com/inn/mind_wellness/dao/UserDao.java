@@ -13,4 +13,10 @@ public interface UserDao extends JpaRepository<User, Integer> {
 
     // Find a user by email
     User findByEmail(String email);  // This method is added to find a user by email
+
+//    @Repository
+//    public interface ChatMessageDao extends JpaRepository<ChatMessage, Integer> {
+//
+//    }
+
 }
