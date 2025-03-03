@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css";
+import { useAuth } from "./AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -11,6 +13,9 @@ const Signup = () => {
     age: "",
     gender: "",
   });
+
+  const { setToken } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -45,6 +50,11 @@ const Signup = () => {
 
       if (response.ok) {
         alert(data.message || (isLogin ? "Login Successful! 🚀" : "Successfully Registered! 🎉"));
+         // Store the token globally using context
+         if (data.token) {
+          setToken(data.token); // This will store the token globally
+          navigate("/dashboard");
+        }
       } else {
         alert(data.message || "Something went wrong.");
         console.warn("Error:", data.message);
