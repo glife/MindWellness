@@ -12,11 +12,13 @@ export const AuthProvider = ({ children }) => {
 
   // Load the token from localStorage on initial load
   useEffect(() => {
-    const token = localStorage.getItem("authToken");
-    if (token) {
-      setAuthToken(token);
-    }
-  }, []);
+  const storedToken = localStorage.getItem("authToken");
+  console.log("Loaded Token from Storage:", storedToken); // Debugging
+  if (storedToken) {
+    setAuthToken(storedToken);
+  }
+}, []);
+
 
   // Set token in both state and localStorage
   const setToken = (token) => {

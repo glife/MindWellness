@@ -88,7 +88,7 @@ export default function Dashboard() {
       <div className="flex h-screen bg-gradient-to-br from-blue-500 to-green-300 text-white">
         <aside className="w-20 md:w-64 bg-gray-800 p-4 flex flex-col gap-6">
           <nav className="flex flex-col gap-4">
-            <NavItem icon={<Home />} label="Dashboard" to="/" />
+            <NavItem icon={<Home />} label="Dashboard" to="/dashboard" />
             <NavItem icon={<Book />} label="AI Chat" />
             <NavItem icon={<Heart />} label="Self-Care" />
             <NavItem icon={<MessageCircle />} label="Community" to="/community" />

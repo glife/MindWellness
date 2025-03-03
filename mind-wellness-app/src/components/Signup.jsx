@@ -52,9 +52,10 @@ const Signup = () => {
         alert(data.message || (isLogin ? "Login Successful! 🚀" : "Successfully Registered! 🎉"));
          // Store the token globally using context
          if (data.token) {
-          setToken(data.token); // This will store the token globally
+          setToken(data.token); // Store in AuthContext
+          console.log("Stored Token:", localStorage.getItem("authToken")); // Debugging
           navigate("/dashboard");
-        }
+        }        
       } else {
         alert(data.message || "Something went wrong.");
         console.warn("Error:", data.message);
