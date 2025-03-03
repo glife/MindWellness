@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.security.AuthProvider;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -127,19 +126,4 @@ public class UserServiceImpl implements UserService {
 
 
 }
-
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-        import React, { Component } from "react";
-        import Signup from "./components/Signup"; // If inside src/components/
-        import Dashboard from "./components/Dashboard";
-
-
-function App() {
-    return (
-            <
-  );
-}
-
-export default App;
 
